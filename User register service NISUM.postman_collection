@@ -1,0 +1,391 @@
+{
+  "info": {
+    "_postman_id": "2613e4c0-2a6d-46c2-a15f-97878e1fb0e2",
+    "name": "User register service NITSUM",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "12388724"
+  },
+  "item": [
+    {
+      "name": "register-user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Michael Padilla\",\r\n  \"email\": \"michael.padilla@gmail.com\",\r\n  \"password\": \"PasswordSegura123*\",\r\n  \"phones\": [\r\n    {\r\n      \"number\": \"78694514\",\r\n      \"cityCode\": \"1\",\r\n      \"countryCode\": \"503\"\r\n    }\r\n  ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/authentication/api/user/registration",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "authentication",
+            "api",
+            "user",
+            "registration"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "400 BAD REQUEST",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Michael Padilla\",\r\n  \"email\": \"juan.perez@.com\",\r\n  \"password\": \"wewe*\",\r\n  \"phones\": [\r\n    {\r\n      \"number\": \"12345678\",\r\n      \"cityCode\": \"1\",\r\n      \"countryCode\": \"503\"\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/authentication/api/user/registration",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "authentication",
+                "api",
+                "user",
+                "registration"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Sun, 11 Oct 2026 03:44:59 GMT"
+            },
+            {
+              "key": "connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"mensaje\": [\n    \"La clave no cumple con el formato requerido. Contraseña debe incluir almenos una minúscula, una mayúscula, un número y mínimo 8 caracteres\",\n    \"El formato del correo debe ser válido y tener un dominio\"\n  ]\n}"
+        },
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Michael Padilla\",\r\n  \"email\": \"michael.padilla@gmail.com\",\r\n  \"password\": \"PasswordSegura123*\",\r\n  \"phones\": [\r\n    {\r\n      \"number\": \"78694514\",\r\n      \"cityCode\": \"1\",\r\n      \"countryCode\": \"503\"\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/authentication/api/user/registration",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "authentication",
+                "api",
+                "user",
+                "registration"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Sun, 11 Oct 2026 04:11:42 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"id\": \"1409f547-f89a-448a-b51b-40436d732bfe\",\n  \"name\": \"Michael Padilla\",\n  \"email\": \"michael.padilla@gmail.com\",\n  \"created\": \"2026-10-10T22:11:42.7358126\",\n  \"modified\": \"2026-10-10T22:11:42.7358126\",\n  \"lastlogin\": \"2026-10-10T22:11:42.7358126\",\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3OTE2OTE5MDIsImV4cCI6MTc5MTY5NTUwMn0.hTXh090rJMwr6Jn8Hnv6qPV3vjjZr7cDx1BFAzUQdCI\",\n  \"isactive\": true,\n  \"phones\": [\n    {\n      \"number\": \"78694514\",\n      \"countryCode\": \"503\",\n      \"cityCode\": \"1\"\n    }\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "authenticate-user",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0wes}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"michael.padilla@gmail.com\",\r\n  \"password\": \"PasswordSegura123*\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/authentication/api/user/auth/login",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "authentication",
+            "api",
+            "user",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "401 UNAUTHORIZED",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"michael.padilla@gmail.com\",\r\n  \"password\": \"PasswordSegura123*\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/authentication/api/user/auth/login",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "authentication",
+                "api",
+                "user",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "content-length",
+              "value": "59"
+            },
+            {
+              "key": "date",
+              "value": "Sun, 11 Oct 2026 14:48:44 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"message\": \"Token es inválido o ha expirado\",\n  \"status\": 401\n}"
+        },
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"michael.padilla@gmail.com\",\r\n  \"password\": \"PasswordSegura123*\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/authentication/api/user/auth/login",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "authentication",
+                "api",
+                "user",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "x-content-type-options",
+              "value": "nosniff"
+            },
+            {
+              "key": "x-xss-protection",
+              "value": "0"
+            },
+            {
+              "key": "cache-control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "expires",
+              "value": "0"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            },
+            {
+              "key": "transfer-encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "date",
+              "value": "Sun, 11 Oct 2026 14:49:19 GMT"
+            },
+            {
+              "key": "keep-alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "true"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "json_web_token_0wes",
+      "secret": true
+    }
+  ]
+}
