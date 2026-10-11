@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -54,7 +55,16 @@ public class GlobalExceptionHandler {
     public ResponseEntity<MessageError> handleException(RuntimeException e) {
 
         log.info("Error: {}", e.getMessage());
-        MessageError errorDetail = MessageError.builder().mensaje("No fue posible completar la solicitud. Intente nuevamente en unos momentos.").build();
+        MessageError errorDetail = MessageError.builder().mensaje(e.getMessage()).build();
+        response = new ResponseEntity<>(errorDetail, HttpStatus.BAD_REQUEST);
+
+        return response;
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<MessageError> handleException(BadCredentialsException e) {
+
+        MessageError errorDetail = MessageError.builder().mensaje("Usuario o contraseña ingresados no son validos.").build();
         response = new ResponseEntity<>(errorDetail, HttpStatus.BAD_REQUEST);
 
         return response;
@@ -63,7 +73,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(UnauthorizedException.class)
     public ResponseEntity<MessageError> handleException(UnauthorizedException e) {
 
-        log.info("Error: {}", e.getMessage());
         MessageError errorDetail = MessageError.builder().mensaje(e.getMessage()).build();
         response = new ResponseEntity<>(errorDetail, HttpStatus.UNAUTHORIZED);
 

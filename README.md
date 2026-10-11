@@ -13,6 +13,16 @@ The API responds with JSON and handles error messages in a consistent format.
 - JWT token generation for user authentication
 - Swagger integration for API documentation
 
+## BASE PATH ENDPOINTS
+- localhost:8080/authentication/api/
+
+## DB SCRIPT
+- ruta: src/main/resources/
+- nombre archivo: schema.sql
+
+## SWAGGER UI ACCESS
+- http://localhost:8080/authentication/api/swagger-ui/index.html
+
 ## Requirements
 
 - Java 17
